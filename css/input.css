@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importing Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@layer components {
+  .sidebar {
+    @apply fixed top-0 bottom-0 left-0 h-full flex flex-col bg-gray-900 p-5 transition-all duration-300;
+    width: 5rem;
+    &:hover {
+      width: 220px;
+    }
+  }
+  .user-account {
+    @apply mt-0 ;
+  }
+  .user-profile {
+    @apply flex items-center text-white;
+  }
+  .user-profile img {
+    @apply w-12 rounded-full;
+  }
+  .user-profile h3 {
+    @apply text-sm font-semibold opacity-0 transition-opacity duration-300 ;
+  }
+  .user-profile span {
+    @apply text-xs font-semibold opacity-0 transition-opacity duration-300;
+  }
+  .user-detail {
+    @apply ml-3 whitespace-nowrap ;
+  }
+  .user-account:hover .user-profile {
+    @apply bg-white rounded;
+  }
+  .sidebar:hover .user-profile h3 {
+    @apply opacity-100;
+  }
+  .user-account:hover .user-profile h3 {
+    @apply opacity-100 text-gray-900;
+  }
+  .sidebar-links {
+    @apply list-none mt-2 h-5/6 overflow-y-auto;
+    &::-webkit-scrollbar {
+      @apply hidden;
+    }
+  }
+  .sidebar-links h4 {
+    @apply text-white font-medium whitespace-nowrap my-2 relative;
+  }
+  .sidebar-links h4 span {
+    @apply opacity-0;
+  }
+  .sidebar:hover .sidebar-links h4 span {
+    @apply opacity-100;
+  }
+  .sidebar-links .menu-separator {
+    @apply absolute left-0 top-1/2 w-full h-px bg-indigo-600 origin-right transition-transform delay-200;
+    transform: scaleX(1) translateY(-50%);
+  }
+  .sidebar:hover .sidebar-links .menu-separator {
+    @apply delay-0;
+    transform: scaleX(0);
+  }
+  .sidebar-links li a {
+    @apply flex items-center gap-x-5 text-white font-extralight whitespace-nowrap py-3 px-2 transition-colors;
+    &:hover {
+      @apply text-gray-900 bg-white rounded;
+    }
+  }
+}
