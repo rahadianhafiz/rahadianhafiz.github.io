@@ -7,10 +7,13 @@
 
 @layer components {
   .sidebar {
-    @apply fixed top-0 bottom-0 left-0 h-full flex flex-col bg-gray-900 p-5 transition-all duration-300;
-    width: 5rem;
+    @apply fixed top-0 bottom-0 left-0 h-full flex flex-col bg-gray-900 p-5;
+    transition-property: width; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    width: 5em; 
     &:hover {
-      width: 220px;
+      width: 13em;
     }
   }
   .user-account {
